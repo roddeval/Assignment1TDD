@@ -13,7 +13,7 @@ int main()
     //cout << "Hello World!\n";
     char buffer[255];
     int length = 0;
-
+    int num = 0;
     LinkedList a;
     a.AddNode(1);
     a.AddNode(2);
@@ -23,6 +23,16 @@ int main()
     s.Push(1);
     s.Push(2);
     s.Push(3);
+
+    num = s.Peek();
+
+    sprintf_s(buffer, "Stack Peek: %d", num);
+
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+
     s.Push(4);
     s.Push(5);
 

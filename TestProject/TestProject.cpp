@@ -21,6 +21,10 @@ namespace TestProject
 			}
 			num = s.HowMany();
 			Assert::IsTrue(num == 100);
+
+			num = s.Peek();
+			Assert::IsTrue(num == 99);
+
 			s.Display();
 			num = s.HowMany();
 			Assert::IsTrue(num == 0);

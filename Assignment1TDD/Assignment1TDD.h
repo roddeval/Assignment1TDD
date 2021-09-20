@@ -33,5 +33,6 @@
             int HowMany();
             void Push(int n);
             node* Pop();
+            int Peek();
             void Display();
     };

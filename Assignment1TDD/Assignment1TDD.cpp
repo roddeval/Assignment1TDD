@@ -97,6 +97,20 @@ using namespace std;
         return temp;
     }
 
+    int Stack::Peek()
+    {
+        int result = -1;
+        if (head != NULL)
+        {
+            if (howMany > 0)
+            {
+                result = head->data;
+            }
+        }
+        return result;
+    }
+
+
     void Stack::Display()
     {
         char buffer[255];
