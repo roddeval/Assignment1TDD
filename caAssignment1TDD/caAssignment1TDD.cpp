@@ -19,7 +19,46 @@ int main()
     a.AddNode(2);
     a.Display();
 
-    Stack s;
+    Stack s = Stack(4);
+
+    num = s.Pop();
+
+    sprintf_s(buffer, "Stack Pop: %d", num);
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+
+    num = s.Peek();
+
+    sprintf_s(buffer, "Stack Peek: %d", num);
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+
+    Stack s2 = Stack(10);
+    for (int x2 = 0; x2 < 100; x2++)
+    {
+        s2.Push(x2);
+    }
+    sprintf_s(buffer, "Stack 2 How Many: %d", s2.HowMany());
+
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+
+    sprintf_s(buffer, "Stack 2 Limit: %d", s2.Limit());
+
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+    s2.Display();
+
+    s = Stack(5);
+
     s.Push(1);
     s.Push(2);
     s.Push(3);
@@ -42,6 +81,14 @@ int main()
     buffer[length] = '\0';
 
     cout << buffer << endl;
+
+    sprintf_s(buffer, "Stack Limit: %d", s.Limit());
+
+    length = (int)strlen(buffer);
+    buffer[length] = '\0';
+
+    cout << buffer << endl;
+
 
     s.Display();
 

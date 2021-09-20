@@ -66,23 +66,51 @@ using namespace std;
     {
         Initialize();
     }
+    Stack::Stack(int pLimit)
+    {
+        Initialize();
+        limit = pLimit;
+        howMany = 0;
+    }
     void Stack::Initialize()
     {
         head = NULL;
         howMany = 0;
+        limit = 0;
     }
     int Stack::HowMany()
     {
         return howMany;
     }
+    int Stack::Limit()
+    {
+        return limit;
+    }
 
     void Stack::Push(int n)
     {
-        node* temp = new node();
-        temp->data = n;
-        temp->next = head;
-        head = temp;
-        howMany++;
+        node* temp = NULL;
+        if (limit == 0)
+        {
+            temp = new node();
+            temp->data = n;
+            temp->next = head;
+            head = temp;
+            howMany++;
+        }
+        else
+        {
+
+            if (howMany < limit)
+            {
+                temp = new node();
+                temp->data = n;
+                temp->next = head;
+                head = temp;
+                howMany++;
+            }
+        }
+
     }
 
     int Stack::Pop()

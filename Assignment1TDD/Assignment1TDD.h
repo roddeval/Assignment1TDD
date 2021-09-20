@@ -27,10 +27,13 @@
         private:
             node* head;
             int howMany;
+            int limit;
         public:
             Stack();
+            Stack(int pLimit);
             void Initialize();
             int HowMany();
+            int Limit();
             void Push(int n);
             int Pop();
             int Peek();
