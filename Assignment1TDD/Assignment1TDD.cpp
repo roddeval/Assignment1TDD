@@ -85,16 +85,19 @@ using namespace std;
         howMany++;
     }
 
-    node* Stack::Pop()
+    int Stack::Pop()
     {
+        int result = -1;
         node* temp = NULL;
         if (head != NULL)
         {
             temp = head;
             head = head->next;
             howMany--;
+
+            result = temp->data;
         }
-        return temp;
+        return result;
     }
 
     int Stack::Peek()
@@ -115,34 +118,23 @@ using namespace std;
     {
         char buffer[255];
         int length = 0;
-        node* displayNode = NULL;
+        int num = NULL;
         if (head != NULL)
         {
 
             do
             {
 
-                displayNode = Pop();
+                num = Pop();
 
-                if (displayNode != NULL)
-                {
+                sprintf_s(buffer, "data: %d", num);
 
-                    sprintf_s(buffer, "node: %p", displayNode);
+                length = (int)strlen(buffer);
+                buffer[length] = '\0';
 
-                    length = (int)strlen(buffer);
-                    buffer[length] = '\0';
+                cout << buffer << endl;
 
-                    cout << buffer << endl;
-
-                    sprintf_s(buffer, "data: %d", displayNode->data);
-
-                    length = (int)strlen(buffer);
-                    buffer[length] = '\0';
-
-                    cout << buffer << endl;
-
-                }
-            } while (displayNode != NULL);
+            } while (howMany > 0);
 
         }
 

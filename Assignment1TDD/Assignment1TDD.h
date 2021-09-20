@@ -32,7 +32,7 @@
             void Initialize();
             int HowMany();
             void Push(int n);
-            node* Pop();
+            int Pop();
             int Peek();
             void Display();
     };
